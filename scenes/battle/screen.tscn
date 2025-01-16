@@ -1,0 +1,224 @@
+[gd_scene load_steps=8 format=3 uid="uid://ble3h207tah0m"]
+
+[ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_k1sl3"]
+[ext_resource type="Texture2D" uid="uid://gae8xbs7v1oo" path="res://assets/img/fight-ellipse.png" id="1_srrfw"]
+[ext_resource type="Script" path="res://scripts/battle/value.gd" id="3_1motj"]
+[ext_resource type="FontFile" uid="uid://dj8pywgoksxqb" path="res://assets/font/textFont.otf" id="4_33yjx"]
+[ext_resource type="Script" path="res://scripts/battle/value_2.gd" id="4_vi7a8"]
+[ext_resource type="Script" path="res://scripts/battle/SpeAtk.gd" id="5_lqnj8"]
+[ext_resource type="Script" path="res://scripts/battle/NormAtk.gd" id="6_w1had"]
+
+[node name="Battle" type="Node2D"]
+visible = false
+
+[node name="background" type="ColorRect" parent="."]
+offset_left = -1644.0
+offset_top = -1051.0
+offset_right = 1562.0
+offset_bottom = 920.0
+color = Color(0.85098, 0.85098, 0.85098, 1)
+script = ExtResource("1_k1sl3")
+
+[node name="section-fight" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 3202.0
+offset_bottom = 1416.0
+color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[node name="DefenderBar" type="ColorRect" parent="background/section-fight"]
+layout_mode = 0
+offset_left = 766.845
+offset_top = 322.885
+offset_right = 992.845
+offset_bottom = 354.885
+scale = Vector2(2.605, 2.605)
+color = Color(1, 1, 1, 0)
+
+[node name="Value" type="ProgressBar" parent="background/section-fight/DefenderBar"]
+layout_mode = 0
+offset_right = 226.0
+offset_bottom = 32.0
+show_percentage = false
+script = ExtResource("4_vi7a8")
+
+[node name="PV" type="Label" parent="background/section-fight/DefenderBar/Value"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -1.0
+offset_right = 152.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 28
+text = "xxx/xxx"
+
+[node name="Name" type="Label" parent="background/section-fight/DefenderBar"]
+layout_mode = 0
+offset_left = 0.0595122
+offset_top = -41.7985
+offset_right = 160.06
+offset_bottom = 6.20154
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 40
+text = "Defender_name"
+
+[node name="Level" type="Label" parent="background/section-fight/DefenderBar"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = -43.0
+offset_right = 225.0
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 40
+text = "Lv. xx"
+
+[node name="DefenderEllipse" type="Sprite2D" parent="background/section-fight"]
+position = Vector2(2431, 517)
+scale = Vector2(1.281, 1.018)
+texture = ExtResource("1_srrfw")
+
+[node name="AttackerBar" type="ColorRect" parent="background/section-fight"]
+layout_mode = 0
+offset_left = 1671.92
+offset_top = 1101.74
+offset_right = 1897.92
+offset_bottom = 1133.74
+scale = Vector2(2.715, 2.715)
+color = Color(1, 1, 1, 0)
+
+[node name="Value" type="ProgressBar" parent="background/section-fight/AttackerBar"]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 32.0
+show_percentage = false
+script = ExtResource("3_1motj")
+
+[node name="PV" type="Label" parent="background/section-fight/AttackerBar/Value"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -1.0
+offset_right = 152.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 28
+text = "xxx/xxx"
+
+[node name="Name" type="Label" parent="background/section-fight/AttackerBar"]
+layout_mode = 0
+offset_left = 1.87107
+offset_top = -50.3646
+offset_right = 161.871
+offset_bottom = -2.36464
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 40
+text = "Attacker_name"
+
+[node name="Level" type="Label" parent="background/section-fight/AttackerBar"]
+layout_mode = 0
+offset_left = 158.409
+offset_top = -46.313
+offset_right = 224.409
+offset_bottom = 1.68695
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 40
+text = "Lv. BB"
+
+[node name="AttackerEllipse" type="Sprite2D" parent="background/section-fight"]
+position = Vector2(758, 1220)
+scale = Vector2(1.351, 1.073)
+texture = ExtResource("1_srrfw")
+
+[node name="section-atk" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1428.0
+offset_right = 3203.0
+offset_bottom = 1970.0
+color = Color(0.80161, 0.863439, 1, 1)
+
+[node name="NamePiece" type="Label" parent="background/section-atk"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 1636.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 70
+text = "Piece_name"
+horizontal_alignment = 1
+
+[node name="BtnAtkContainer" type="HBoxContainer" parent="background/section-atk"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1192.5
+offset_top = -100.0
+offset_right = -292.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="NormAtk" type="Button" parent="background/section-atk/BtnAtkContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+script = ExtResource("6_w1had")
+
+[node name="SpeAtk" type="Button" parent="background/section-atk/BtnAtkContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+script = ExtResource("5_lqnj8")
+
+[node name="AtkInfoBg" type="ColorRect" parent="background/section-atk"]
+layout_mode = 0
+offset_left = 1650.0
+offset_top = -1.0
+offset_right = 2163.0
+offset_bottom = 178.0
+scale = Vector2(3.03, 3.03)
+
+[node name="AtkInfoBox" type="VBoxContainer" parent="background/section-atk/AtkInfoBg"]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 514.0
+offset_bottom = 179.0
+
+[node name="title" type="Label" parent="background/section-atk/AtkInfoBg/AtkInfoBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_33yjx")
+theme_override_font_sizes/font_size = 50
+text = "Information about the attack"
+horizontal_alignment = 1
+
+[node name="desc" type="Label" parent="background/section-atk/AtkInfoBg/AtkInfoBox"]
+custom_minimum_size = Vector2(150, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 1
+
+[node name="damage" type="Label" parent="background/section-atk/AtkInfoBg/AtkInfoBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+
+[connection signal="mouse_entered" from="background/section-atk/BtnAtkContainer/NormAtk" to="background" method="_on_atk_mouse_entered"]
+[connection signal="pressed" from="background/section-atk/BtnAtkContainer/NormAtk" to="background" method="_on_atk_pressed"]
+[connection signal="pressed" from="background/section-atk/BtnAtkContainer/NormAtk" to="background/section-atk/BtnAtkContainer/NormAtk" method="_on_pressed"]
+[connection signal="mouse_entered" from="background/section-atk/BtnAtkContainer/SpeAtk" to="background" method="_on_spe_atk_mouse_entered"]
+[connection signal="pressed" from="background/section-atk/BtnAtkContainer/SpeAtk" to="background" method="_on_spe_atk_pressed"]
+[connection signal="pressed" from="background/section-atk/BtnAtkContainer/SpeAtk" to="background/section-atk/BtnAtkContainer/SpeAtk" method="_on_pressed"]

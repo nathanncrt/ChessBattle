@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkdk8md5dauso"]
+
+[ext_resource type="Script" path="res://scripts/chess/knight.gd" id="1_qjit5"]
+
+[node name="Knight" type="Sprite2D"]
+script = ExtResource("1_qjit5")

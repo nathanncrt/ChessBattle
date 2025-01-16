@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuobmqmwn864m"]
+
+[ext_resource type="Script" path="res://scripts/chess/queen.gd" id="1_2ionh"]
+
+[node name="Queen" type="Sprite2D"]
+script = ExtResource("1_2ionh")

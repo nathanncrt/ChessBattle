@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmt527efucebb"]
+
+[ext_resource type="FontFile" uid="uid://dj8pywgoksxqb" path="res://assets/font/textFont.otf" id="1_cmsxv"]
+[ext_resource type="Script" path="res://scripts/chess/panel.gd" id="1_srevx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd6tr"]
+font = ExtResource("1_cmsxv")
+font_size = 320
+
+[sub_resource type="LabelSettings" id="LabelSettings_1piik"]
+font = ExtResource("1_cmsxv")
+font_size = 240
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4b2w"]
+font = ExtResource("1_cmsxv")
+font_size = 160
+
+[node name="Panel" type="VBoxContainer"]
+custom_minimum_size = Vector2(2300, 2300)
+offset_right = 2300.0
+offset_bottom = 2300.0
+script = ExtResource("1_srevx")
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 2
+text = "Pièce  :
+"
+label_settings = SubResource("LabelSettings_qd6tr")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_1piik")
+horizontal_alignment = 1
+
+[node name="LVL" type="Label" parent="."]
+layout_mode = 2
+text = "
+"
+label_settings = SubResource("LabelSettings_c4b2w")
+horizontal_alignment = 1
+
+[node name="HP" type="Label" parent="."]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_c4b2w")
+horizontal_alignment = 1
+
+[node name="AttackInfo" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Normal_Attack" type="Label" parent="AttackInfo"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_c4b2w")
+horizontal_alignment = 1
+
+[node name="Special_Attack" type="Label" parent="AttackInfo"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_c4b2w")
+horizontal_alignment = 1
+
+[node name="remain_special" type="Label" parent="AttackInfo"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_c4b2w")
+horizontal_alignment = 1
+
+[connection signal="displayInfo" from="." to="." method="_on_display_info"]
+[connection signal="resetPanel" from="." to="." method="_on_reset_panel"]

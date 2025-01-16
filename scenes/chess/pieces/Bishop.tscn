@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsssj54x1egem"]
+
+[ext_resource type="Script" path="res://scripts/chess/bishop.gd" id="1_61s35"]
+
+[node name="Bishop" type="Sprite2D"]
+script = ExtResource("1_61s35")

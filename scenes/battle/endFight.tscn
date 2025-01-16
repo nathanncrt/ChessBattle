@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://cntoj7asj24jt"]
+
+[ext_resource type="Texture2D" uid="uid://cfhwcytx6xf88" path="res://assets/img/pieces/black/chess-knight-black.png" id="1_djoej"]
+[ext_resource type="FontFile" uid="uid://dj8pywgoksxqb" path="res://assets/font/textFont.otf" id="2_sfh6l"]
+[ext_resource type="Script" path="res://scripts/battle/validation_button.gd" id="3_l42oh"]
+
+[node name="summaryFight" type="ColorRect"]
+z_index = 11
+custom_minimum_size = Vector2(1500, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.945098, 0.768627, 1)
+
+[node name="piece-name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 21.0
+offset_right = 1309.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sfh6l")
+theme_override_font_sizes/font_size = 100
+text = "PIECE  WON"
+horizontal_alignment = 1
+
+[node name="Sprite-piece" type="Sprite2D" parent="."]
+position = Vector2(370, 421)
+texture = ExtResource("1_djoej")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 205.0
+offset_right = 1356.0
+offset_bottom = 691.0
+
+[node name="PV" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sfh6l")
+theme_override_font_sizes/font_size = 80
+text = "PV + 50"
+
+[node name="level" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sfh6l")
+theme_override_font_sizes/font_size = 80
+text = "Level + 1"
+
+[node name="Atk_normal" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sfh6l")
+theme_override_font_sizes/font_size = 80
+text = "Damage normal + 20"
+
+[node name="nbAtkSpe" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sfh6l")
+theme_override_font_sizes/font_size = 80
+text = "Atk spe remain +1"
+
+[node name="Atk_special" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sfh6l")
+theme_override_font_sizes/font_size = 80
+text = "Damage special + 60"
+
+[node name="validation_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 757.0
+offset_right = 829.3
+offset_bottom = 875.0
+theme_override_font_sizes/font_size = 80
+text = "ok"
+script = ExtResource("3_l42oh")
+
+[connection signal="pressed" from="validation_button" to="validation_button" method="_on_pressed"]

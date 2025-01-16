@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://u8pcp5eaeamv"]
+
+[ext_resource type="Script" path="res://scripts/chess/rank.gd" id="1_j2fao"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(2500, 2500)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_j2fao")

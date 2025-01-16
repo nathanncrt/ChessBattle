@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://yb2y4ir88ujx"]
+
+[ext_resource type="Texture2D" uid="uid://dsuih6m8yvxtd" path="res://assets/img/background-main_menu.png" id="1_2eny3"]
+[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1_7n2im"]
+[ext_resource type="FontFile" uid="uid://dj8pywgoksxqb" path="res://assets/font/textFont.otf" id="3_pwx3m"]
+[ext_resource type="AudioStream" uid="uid://dgftw3mua370i" path="res://assets/music/chess_game_ost.wav" id="4_2pmjb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h4y6i"]
+texture = ExtResource("1_2eny3")
+modulate_color = Color(0.34194, 0.34194, 0.34194, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn0m6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h3bf"]
+bg_color = Color(0.448436, 0.448436, 0.448436, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx7dp"]
+bg_color = Color(0.125911, 0.125911, 0.125911, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1412g"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 1.0
+offset_right = -8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7n2im")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 1.0
+offset_right = 9.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h4y6i")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -127.5
+offset_right = 234.0
+offset_bottom = 127.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pwx3m")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sn0m6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3h3bf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mx7dp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1412g")
+text = "Start Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pwx3m")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sn0m6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3h3bf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mx7dp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1412g")
+text = "Quit Game"
+
+[node name="MainTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.485
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -244.28
+offset_right = 162.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pwx3m")
+theme_override_font_sizes/font_size = 100
+text = "ChessBattle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Creators" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -567.0
+offset_top = -36.0
+offset_right = 574.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_pwx3m")
+theme_override_font_sizes/font_size = 30
+text = "Made with <3 by : BURLOT Brice, BOURGASSER Léo, DUNESME Ruben, NICART Nathan, PERROT Clément"
+horizontal_alignment = 1
+
+[node name="CodeSource" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_pwx3m")
+theme_override_font_sizes/font_size = 28
+text = "Code Source "
+uri = "https://iut-info.univ-reims.fr/gitlab/burl0005/sae-mr506r-godot"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2pmjb")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbgnf2066kebb"]
+
+[ext_resource type="Script" path="res://scripts/battle/qteArea.gd" id="1_eq85p"]
+[ext_resource type="Script" path="res://scripts/battle/qte_container.gd" id="1_exln6"]
+[ext_resource type="Texture2D" uid="uid://40nexnxjkp06" path="res://assets/img/gui/timer.png" id="3_4e1mc"]
+
+[node name="qteArea" type="ColorRect"]
+custom_minimum_size = Vector2(2600, 700)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eq85p")
+
+[node name="qte_container" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 1040.0
+offset_bottom = 566.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_exln6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 401)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_4e1mc")
+centered = false
+
+[node name="TimerBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 446.0
+offset_right = 650.0
+offset_bottom = 476.0
+scale = Vector2(6, 6)
+max_value = 7.0
+value = 7.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
