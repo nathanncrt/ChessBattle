@@ -37,7 +37,7 @@ Un pion peut donc capturer une dame si cette dernière ne parvient pas à l'atta
 
 1. Cloner le projet
 ```
-git clone https://iut-info.univ-reims.fr/gitlab/burl0005/sae-mr506r-godot.git
+git clone https://github.com/nathanncrt/ChessBattle.git
 ```
 2. Ouvrir le projet avec Godot 4
 
